@@ -4,9 +4,11 @@ $global_number = 3;
 
 function kadai7(){
   static $local_number = 1;
-  echo $local_number++;
+  $local_number++;
   global $global_number;
-  echo  $global_number*=2;
+  $global_number*=2;
+echo "No.".$local_number."<br>";
+echo $global_number."<br>";
 }
 
 $num = 0;
@@ -14,3 +16,4 @@ do{
 	kadai7();
 	$num++;
 }while($num<20);
+?>

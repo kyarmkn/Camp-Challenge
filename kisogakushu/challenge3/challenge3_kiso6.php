@@ -23,7 +23,27 @@ $arr3 = array(
              );
 
 
-if ($profile == "佐藤"){
+$array = array($arr1,$arr2,$arr3);
+
+foreach ($array as $key => $value) {
+  foreach($value as $key => $value2 ){
+    $search_ini = strstr($value2,$profile);
+    if($search_ini != false){
+      return $value;
+    }
+  }
+}
+
+}
+
+$result = profile("高");
+
+foreach ($result as $key => $value3) {
+  echo $value3."<br>";
+}
+
+
+/*if ($profile == "佐藤"){
    return $arr1;
  }elseif ($profile == "鈴木") {
    return $arr2;
@@ -37,6 +57,6 @@ foreach ($result as $key => $value) {
   echo $value;
 }
 
-//あとでもう一回考え直します！
-
+08/04 あとでもう一回考え直します！
+*/
 ?>
