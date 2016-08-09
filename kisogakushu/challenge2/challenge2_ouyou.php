@@ -10,31 +10,27 @@
  */
 
  $num = $_GET["num"];
+echo $num."<br>";
 
-
-// ↓よくわからないし違うっぽい
-//整数かどうか
-if($num <= 0 || is_float($num)){
-    print "正の整数を指定してください。";
-//素因数分解
-} else {
-    while($i = 2){
-        if(($num % $i) === 0){
-            echo $i."×";
-            $num = $num / $i;
-        } else {
-            ++$i;
+/*if($num <= 0 || is_float($nu){
+    print "正の整数を指定してください。";/素因数分解
+} else {*/
+  while ($num > 1) {
+        if(($num % 2) === 0){
+          $num = $num / 2;
+          echo 2;
+        } elseif ($num % 3 == 0) {
+          $num = $num / 3;
+          echo 3;
+        } elseif ($num % 5 == 0) {
+          $num = $num / 5;
+          echo 5;
+        }elseif($num % 7 == 0){
+          $num = $num / 7;
+          echo 7;
+          break;
         }
-        if($num <= $i){
-            if($num === 1){
-               echo "1";
-            }elseif($num == $i){
-                echo $i." ";
-            }
-            break;
-        }
-    }
-}
+          }
 
-// 08/05　あとでやりなおし！
+//要復習！！
 ?>
