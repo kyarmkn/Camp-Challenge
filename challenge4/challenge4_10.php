@@ -8,4 +8,23 @@
 　③書き込む内容は、「日時　状況（開始・終了）」の形式で書き込む。
 　④最後に、ログファイルを読み込み、その内容を表示してください。*/
 
+$fp = fopen('4_10.txt','w');
+
+$date = date("Y年m月d日 H時i分s秒");
+fwrite($fp,$date . "開始\n");
+fclose($fp);
+
+$data = array("alfa", "bravo", "charlie");
+list($a, $b, $c) = $data;
+echo $c;
+
+
+$fp = fopen('4_10.txt','a');
+
+$date = date("Y年m月d日 H時i分s秒");
+fwrite($fp,$date . "終了");
+fclose($fp);
+
+$file = file_get_contents('4_10.txt');
+echo $file;
  ?>
