@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-      <title>demo4-demo</title>
+      <title>challenge4_12</title>
 </head>
 <body>
     <?php
@@ -19,37 +19,27 @@
 
     $bocchan_fp = fopen('4_12_bocchan.txt','r');
 
-    /*for($i=0;$i<$read_line;++$i){
+    for($i=0;$i<$read_line;++$i){
         $bocchan_texts[$i]=fgets($bocchan_fp);
         $count += mb_strlen($bocchan_texts[$i]);
-    }*/
+    }
 
-    /*echo $read_line.'行目までの文字数は'.$count.'です<br>';
-    echo 'そのうち、「'.$figure.'」という文字は'.figure_count($waganeko_texts).'個含まれています<br>';
-    echo '<br>これを「'.$exchange_figure.'」という文字に置き換えると...<br>';*/
+    echo '元の文章'.'<br>';
+    $text = file_get_contents('4_12_bocchan.txt');
+    echo $text.'<br>';
+    echo '<br>'.'これを「'.$figure.'」で改行すると...<br><br><br>';
 
     $changed_text = bocchan_exchange($bocchan_texts,$exchange_figure);
 
     foreach ($changed_text as $key => $changed_line){
-        echo ($key+1).'行目:';
+        /*echo ($key+1).'行目:';*/
         echo $changed_line.'<br>';
     }
 
-    echo '<br>という表現になります<br>';
+    echo '<br>となります。<br>';
 
 
-    function figure_count($texts){
-        global $figure;
-        $figcnt = 0;
-
-        foreach ($texts as $text_line){
-            $figcnt += mb_substr_count($text_line, $figure);
-        }
-
-        return $figcnt;
-    }
-
-    function waganeko_exchange($texts,$exfig){
+    function bocchan_exchange($texts,$exfig){
         global $figure;
         $ex_texts = array();
 
