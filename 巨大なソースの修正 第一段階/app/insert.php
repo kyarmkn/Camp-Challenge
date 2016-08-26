@@ -55,7 +55,7 @@ if (isset($_SESSION['comment'])) {
 <body>
     <form action="<?php echo INSERT_CONFIRM ?>" method="POST">
 
-    <!--　↓課題4 値を保持するコードを書きました。↓　-->
+    <!--　↓課題4 値を保持するコードを追加して書きました。↓　-->
     名前:
     <input type="text" name="name" value="<?php echo $name ?>">
     <br><br>
